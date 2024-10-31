@@ -32,13 +32,16 @@ export default function PaymentScreen({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Confirmar Pago</Text>
+      <View style={styles.paymentContainer}>
+      <Text style={styles.title}>Su pago es:</Text>
       <Text style={styles.amount}>${amount.toFixed(2)}</Text>
-      <Text style={styles.description}>{paymentInfo.description}</Text>
+      </View>
+      <View style={styles.ButtonConfirmcontainer}>
       <TouchableOpacity style={styles.confirmButton} onPress={confirmPayment}>
         <Text style={styles.confirmButtonText}>Confirmar Pago</Text>
       </TouchableOpacity>
-    </View>
+      </View>
+      </View>
   );
 }
 
@@ -48,29 +51,50 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#000000',
+  },
+  paymentContainer: {
+    width: '95%',                 // Tarjeta un poco más chica que el ancho de la pantalla
+    backgroundColor: '#000000',    // Fondo blanco para la tarjeta
+    borderRadius: 10,              // Bordes sutilmente redondeados
+    padding: 30,                   // Espacio interno en la tarjeta
+    shadowColor: '#00d8ff',           // Sombras para dar profundidad
+    shadowOffset: { width: 30, height: 30 },
+    shadowRadius: 10,
+    elevation: 50,                  // Sombra en Android
+    alignItems: 'center',
+    marginTop: 30,            // Alineación a la izquierda
+    marginBottom: 420,       
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
+    color: '#ffffff'
   },
   amount: {
-    fontSize: 36,
+    fontSize: 35,
     fontWeight: 'bold',
-    marginBottom: 10,
+    color: '#ffffff',
+    paddingLeft: 15,
+    paddingTop: 15,
   },
-  description: {
-    fontSize: 18,
-    marginBottom: 30,
+  ButtonConfirmcontainer: {
+    width: '95%',                  // Ancho del botón
+    marginBottom: 20,              // Espacio inferior
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   confirmButton: {
-    backgroundColor: '#4CAF50',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
+    backgroundColor: '#00d8ff',    // Color de fondo del botón
+    padding: 15,                   // Espaciado interno
+    borderRadius: 10,              // Bordes redondeados
+    width: '100%',                 // Botón ocupa el 100% del contenedor
+    alignItems: 'center',          // Centra el texto en el botón
   },
   confirmButtonText: {
-    color: 'white',
-    fontSize: 18,
+    color: '#000000',              // Color del texto en el botón
+    fontSize: 25,                  // Tamaño del texto
+    fontFamily: 'Fredoka',         // Fuente personalizada
+    fontWeight: 'bold',            // Negrita para destacar el texto
   },
 });

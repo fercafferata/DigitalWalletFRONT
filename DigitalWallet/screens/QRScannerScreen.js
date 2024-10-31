@@ -39,7 +39,7 @@ export default function QRScannerScreen({ navigation, route }) {
       />
       {scanned && (
         <TouchableOpacity style={styles.button} onPress={() => setScanned(false)}>
-          <Text style={styles.buttonText}>Tap to Scan Again</Text>
+          <Text style={styles.buttonText}>Escanear nuevamente</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -54,14 +54,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#2196F3',
-    padding: 15,
-    borderRadius: 5,
-    margin: 20,
+    backgroundColor: '#00d8ff',    // Color de fondo del botón
+    padding: 15,                   // Espaciado interno
+    borderRadius: 10,              // Bordes redondeados
+    width: '100%',                 // Botón ocupa el 100% del contenedor
+    alignItems: 'center',          // Centra el texto en el botón
   },
   buttonText: {
-    color: 'white',
-    fontSize: 16,
-    textAlign: 'center',
+    color: '#000000',              // Color del texto en el botón
+    fontSize: 25,                  // Tamaño del texto
+    fontFamily: 'Fredoka',         // Fuente personalizada
+    fontWeight: 'bold',            // Negrita para destacar el texto
   },
 });

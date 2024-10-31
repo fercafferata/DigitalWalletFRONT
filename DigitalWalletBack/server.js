@@ -31,13 +31,12 @@ app.get('/generate-test-qr', async (req, res) => {
   const paymentInfo = {
     transactionId: Date.now().toString(),
     amount: amount,
-    description: 'Test Payment'
   };
 
   try {
     const qrCodeDataUrl = await generateQR(paymentInfo);
     res.send(`
-      <h1>QR de Prueba</h1>
+      <h1>Escanear para pagar</h1>
       <img src="${qrCodeDataUrl}" />
       <p>Monto: $${amount.toFixed(2)}</p>
       <p>Escanea este código con tu aplicación</p>

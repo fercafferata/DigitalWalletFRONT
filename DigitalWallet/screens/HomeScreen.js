@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.balanceContainer}>
-        <Text style={styles.balanceText}>Current Balance:</Text>
+        <Text style={styles.balanceText}>Su saldo:</Text>
         <Text style={styles.balanceAmount}>${balance.toFixed(2)}</Text>
       </View>
       <View style={styles.buttonContainer}>
@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
           style={styles.scanButton}
           onPress={() => navigation.navigate('QRScanner', { onBalanceUpdate: handleBalanceUpdate })}
         >
-          <Text style={styles.scanButtonText}>Scan QR Code</Text>
+          <Text style={styles.scanButtonText}>Escanear código QR</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   scanButtonText: {
     color: '#000000',              // Color del texto en el botón
     fontSize: 25,                  // Tamaño del texto
-    fontFamily: 'Fredoka',         // Fuente personalizada
     fontWeight: 'bold',            // Negrita para destacar el texto
   },
 });
