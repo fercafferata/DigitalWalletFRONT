@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#000000',              // Color del texto en el botón
     fontSize: 25,                  // Tamaño del texto
-    fontFamily: 'Fredoka',         // Fuente personalizada
     fontWeight: 'bold',            // Negrita para destacar el texto
   },
 });
